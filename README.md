@@ -26,7 +26,7 @@ The cluster consists of:
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:jonatasteixeira/multipass-kubernetes.git
    cd multipass-kubernetes
    ```
 
@@ -127,14 +127,16 @@ Encapsulation: VXLAN Cross-Subnet
 
 ```bash
 multipass-kubernetes/
-├── setup-cluster.sh           # Main orchestration script
+├── setup-cluster.sh              # Main orchestration script
 ├── scripts/
-│   ├── setup-node.sh         # Node preparation (all nodes)
-│   └── init-master.sh        # Master node initialization
+│   ├── install-containerd.sh     # Install Container.d (all nodes)
+│   ├── install-kubernetes.sh     # Install kubernetes tools (all nodes)
+│   ├── setup-node.sh             # Node preparation (all nodes)
+│   └── init-master.sh            # Master node initialization
 ├── resources/
 │   └── calico-installation.yaml  # Calico network configuration
-├── logs/                     # Execution logs for each node
-└── README.md                 # This documentation
+├── logs/                         # Execution logs for each node
+└── README.md                     # This documentation
 ```
 
 ## 🎯 Features
